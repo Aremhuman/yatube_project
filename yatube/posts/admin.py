@@ -12,14 +12,8 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
-    # title - название группы,
-    # slug - уникальный адрес группы,часть URL
-    # (например, для группы любителей котиков slug будет равен cats: group/cats)
-    # description - текст, описывающий сообщество
     list_display = ('title', 'slug', 'description')
 
 
-# При регистрации модели Post источником конфигурации для неё назначаем
-# класс PostAdmin
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group, GroupAdmin)

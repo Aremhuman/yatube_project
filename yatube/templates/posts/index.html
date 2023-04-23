@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}
-  <title>{{ title }}</title>
+    последние обновления на сайте
 {% endblock %}
 {% block content %}
-  <!-- класс py-5 создает отступы сверху и снизу блока -->
-  <div class="container py-5">
-    {% for post in posts %}
+    <article>
+        {% for post in posts %}
+         <div class="container py-5">
       <ul>
         <li>
           Автор: {{ post.author.get_full_name }}
@@ -20,5 +20,6 @@
         {% endif %}
       {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
-  </div>
+        </div>
+  </article>
 {% endblock %}
